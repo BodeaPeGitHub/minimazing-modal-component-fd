@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <title>Special Modal Dialog</title>
+</head>
+<body>
+  <button id="openModal">Open Modal</button>
+  
+  <modal-dialog
+    id="myModal"
+    title="Custom Modal Title"
+    content="This is the custom content of the modal."
+    closeButtonText="×"
+    bottomCloseButtonText="Close Modal">
+    What if I add some text here?
+  </modal-dialog>
+
+  <script type="module" src="./modal-dialog.js"></script>
+  <script>
+    document.getElementById('openModal').onclick = () => {
+      document.getElementById('myModal').open = true;
+    };
+
+    document.getElementById('myModal').addEventListener('open', () => {
+      console.log('Modal is opened');
+    });
+
+    document.getElementById('myModal').addEventListener('close', () => {
+      console.log('Modal is closed');
+    });
+  </script>
+</body>
+</html>
+
